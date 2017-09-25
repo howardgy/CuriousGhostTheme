@@ -30,12 +30,14 @@
 				{{content}}
 			</div><!-- .post-content -->
 			<footer class="post-footer inner">
-				<div class="share-post">
-					<span>Share</span>
-					<a class="square" target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"><i class="icon-twitter" aria-hidden="true"></i><span class="screen-reader-text">Share on Twitter</span></a>
-					<a class="square" target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"><i class="icon-facebook" aria-hidden="true"></i><span class="screen-reader-text">Share on Facebook</span></a>
-					<a class="square" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><i class="icon-google" aria-hidden="true"></i><span class="screen-reader-text">Share on Google+</span></a>
-				</div>
+                {{# if false}}
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="square" target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"><i class="icon-twitter" aria-hidden="true"></i><span class="screen-reader-text">Share on Twitter</span></a>
+                        <a class="square" target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"><i class="icon-facebook" aria-hidden="true"></i><span class="screen-reader-text">Share on Facebook</span></a>
+                        <a class="square" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><i class="icon-google" aria-hidden="true"></i><span class="screen-reader-text">Share on Google+</span></a>
+                    </div>
+                {{/if}}
 				{{!-- Everything inside the #author tags pulls data from the author --}}
 				{{#author}}
 				<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
@@ -66,10 +68,12 @@
 		</article><!-- .post -->
 
 		{{!-- The tag below includes the theme comments - partials/comments.hbs --}}
-		{{> comments}}
+		{{# if false }}
+            {{> comments}}
+        {{/if}}
 
 		{{!-- Email subscribe form --}}
-		{{#if @labs.subscribers}}
+		{{#if false}}
 		<div class="inner">
 			<section class="subscribe-box">
 				<h2 class="subscribe-box-title">Subscribe to {{@blog.title}}</h2>
