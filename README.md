@@ -1,0 +1,1 @@
+This is a Ghost blog theme customized for LaurentStudio(howardgz.com), based on Curious.
